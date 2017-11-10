@@ -157,6 +157,11 @@ c - the char that is embedded in encodedNum
 void short2Char(short encodedNum, char *c)
 
 {
+
+	// set the correct bit in char
+	// for each bit i do
+	// if the corrsponding bit in the encodedChar is set
+	// set the bit at the char c
 	short mask = 0x0001;
 	int i;
 	int bitSet;
@@ -184,11 +189,6 @@ void short2Char(short encodedNum, char *c)
 
 			}
 		}
-
-		// set the correct bit in char
-		// for each bit i do
-		// if the corrsponding bit in the encodedChar is set
-		// set the bit at the char c
 	}
 }
 
@@ -213,7 +213,7 @@ void correctCode(short *num)
 		int bitNumber = 0;
 		int count, p;
 
-
+		// compares the given parity bit with what it should be
 		count = parity(*num, P1_MASK);
 		p = isShortBitSet(*num, 1);
 		if ((count%2) != (p)) {
@@ -239,6 +239,7 @@ void correctCode(short *num)
 		}
 
 
+		//if the given parity bit and the proper value are not the same, flip the bit
 		if (bitNumber > 0) {
 			flipBitShort(bitNumber, num);
 		}

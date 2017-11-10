@@ -1,8 +1,8 @@
 ### Name: Hugh Xie  
 ### Student Number: 101036694  
 ##### Purpose: COMP2401 Assignment 2  
-* Transmit: Outputs messagee represented as short intergers that have been encoded and randomly subjected to errors.
-* Receive: Takes the encoded message with errors and corrects the potentially flipped bits by implenting the Hamming Code. The program then outputs the original and corrected messages.
+* Transmit: Outputs message represented as short integers that have been encoded and randomly subjected to errors.
+* Receive: Takes the encoded message with errors and corrects the potentially flipped bits by implementing the Hamming Code. The program then outputs the original and corrected messages.
 
 | Source Files |
 | ------ |
