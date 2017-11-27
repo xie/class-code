@@ -347,7 +347,7 @@ int deleteNodeByName(PersonalInfo **head, char *firstName,
 
   while (tmp->next != NULL) {
     if (strcmp(tmp->next->firstName, firstName) == 0) {
-      deleteAfter(tmp, tmp->id, tmp->firstName, tmp->familyName);
+      deleteAfter(tmp, 0, tmp->firstName, tmp->familyName);
       return 0;
     }
     tmp = tmp->next;
