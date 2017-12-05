@@ -1,4 +1,4 @@
-/* 
+/*
 File is isPrime.c
 
 Purpose:
@@ -10,12 +10,12 @@ number - a positive int  entered via the command line parameters.  For example i
 output:
 0 - if the input number is not a prime number
 1 - if the input number is a prime number
-2 - if the command line parameter is not correct 
+2 - if the command line parameter is not correct
 
 Assumption:
 the program does not check if the number is a positive integer
 
-*/ 
+*/
 
 /**************************************************************/
 // INCLUDE FILES
@@ -59,7 +59,7 @@ number - the number to be checked
 return:
 0 - if the number is not a prime number
 1 - if the number is a prime number
-*/ 
+*/
 
 int isPrime(unsigned int number)
 {
@@ -67,6 +67,7 @@ int isPrime(unsigned int number)
 	for(i = 2; i*i <= number; i++) {
 		usleep(100);
 		if (number % i == 0) {
+			printf("%d not a prime number\n",number);
 			return(0);
 		}
 	}
