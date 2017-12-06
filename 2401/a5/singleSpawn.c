@@ -68,22 +68,12 @@ int main(int argc, char* argv[]) {
         //child process not complete
       }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       //give process_output var
-=======
-      //give process_output var 
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
-=======
-      //give process_output var 
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
       process_output = WEXITSTATUS(process_status);
       //evaluate process output
       if (process_output == 1) {
 
         //prime
-<<<<<<< HEAD
-<<<<<<< HEAD
         // printf("The number %s is a prime number.\n",buffer);
       } else if (process_output == 0) {
         //not prime
@@ -91,20 +81,6 @@ int main(int argc, char* argv[]) {
       } else {
         //error
         // printf("There was an error");
-=======
-=======
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
-        printf("The number %s is a prime number.\n",buffer);
-      } else if (process_output == 0) {
-        //not prime
-        printf("The number %s is not a prime number.\n",buffer);
-      } else {
-        //error
-        printf("There was an error");
-<<<<<<< HEAD
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
-=======
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
       }
 
     }
@@ -128,14 +104,6 @@ int morph(char *number) {
   //execute program within process id, pass program name and params
   int r = execvp(name, params);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  printf("%d\n",r);
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
-=======
-  printf("%d\n",r);
->>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
 
   return 1;
 
