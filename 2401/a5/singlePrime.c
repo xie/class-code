@@ -67,8 +67,11 @@ int morph(char *number) {
   int r = execvp(name, params);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   //printf("%d\n",r);
 =======
+=======
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
   printf("%d\n",r);
 >>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
 

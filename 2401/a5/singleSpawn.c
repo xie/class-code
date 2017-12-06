@@ -69,7 +69,11 @@ int main(int argc, char* argv[]) {
       }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       //give process_output var
+=======
+      //give process_output var 
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
 =======
       //give process_output var 
 >>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
@@ -79,6 +83,7 @@ int main(int argc, char* argv[]) {
 
         //prime
 <<<<<<< HEAD
+<<<<<<< HEAD
         // printf("The number %s is a prime number.\n",buffer);
       } else if (process_output == 0) {
         //not prime
@@ -87,6 +92,8 @@ int main(int argc, char* argv[]) {
         //error
         // printf("There was an error");
 =======
+=======
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
         printf("The number %s is a prime number.\n",buffer);
       } else if (process_output == 0) {
         //not prime
@@ -94,6 +101,9 @@ int main(int argc, char* argv[]) {
       } else {
         //error
         printf("There was an error");
+<<<<<<< HEAD
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
+=======
 >>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
       }
 
@@ -119,6 +129,10 @@ int morph(char *number) {
   int r = execvp(name, params);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  printf("%d\n",r);
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
 =======
   printf("%d\n",r);
 >>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
