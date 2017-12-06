@@ -56,13 +56,16 @@ void instructions() {
   printf("%s\n", "Usage: singlePrime [filename]");
 }
 
-
+//morph function to morph data from current file to target program
 int morph(char *number) {
 
+  //target name for next program
   char *name = "./isPrime";
+  //method target and param
   char *params[3] = {"isPrime", number};
-  int r = execvp(name,params);
-
+  //execute program within process id, pass program name and params
+  int r = execvp(name, params);
+  
   printf("%d\n",r);
 
   return 1;
