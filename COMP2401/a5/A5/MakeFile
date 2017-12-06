@@ -1,5 +1,3 @@
-clean :
-	rm -f main.o linked_list.o
 
 isPrime : isPrime.c
 	gcc -o isPrime isPrime.c
