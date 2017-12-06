@@ -37,16 +37,24 @@ int isPrime(unsigned int number);
 int main(int argc, char *argv[])
 
 {
-	int i;
 
-	unsigned int number;
+	if (argv[1] != NULL) {
+		char *p;
+		//converts string to int, params define pointer and base 10
+		int n = strtol(argv[1], &p, 10);
 
-	if (argc < 2) return(2);
-	else number = atoi(argv[1]);
-	if (isPrime(number)) {
-		exit(1);
+		if (n > 0) {
+			int r = isPrime(n);
+			printf("The number %d is: %d\n", n, r);
+			return r;
+		} else {
+			return 2;
+		}
+
+
 	}
-	exit(0);
+
+		return 0;
 }
 
 
@@ -67,7 +75,7 @@ int isPrime(unsigned int number)
 	for(i = 2; i*i <= number; i++) {
 		usleep(100);
 		if (number % i == 0) {
-			printf("%d not a prime number\n",number);
+			printf("%d is not a prime number\n",number);
 			return(0);
 		}
 	}
