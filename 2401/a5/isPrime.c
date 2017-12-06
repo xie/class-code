@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
 		if (n > 0) {
 			int r = isPrime(n);
-			printf("The number %d is: %d\n", n, r);
+			// printf("The number %d is: %d\n", n, r);
 			return r;
 		} else {
 			return 2;
@@ -75,10 +75,10 @@ int isPrime(unsigned int number)
 	for(i = 2; i*i <= number; i++) {
 		usleep(100);
 		if (number % i == 0) {
-			printf("%d is not a prime number\n",number);
+			// printf("%d is not a prime number\n",number);
 			return(0);
 		}
 	}
-    printf("%d is a prime number\n",number);
+    // printf("%d is a prime number\n",number);
 	return(1);
 }
