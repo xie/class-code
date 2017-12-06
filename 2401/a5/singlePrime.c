@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
   } else {
     instructions();
   }
-  return 0;
+  return 2; //need return value greater than 1
 }
 
 
@@ -66,7 +66,11 @@ int morph(char *number) {
   //execute program within process id, pass program name and params
   int r = execvp(name, params);
 
+<<<<<<< HEAD
   //printf("%d\n",r);
+=======
+  printf("%d\n",r);
+>>>>>>> 5e1e56b4c0696776700f0276ee80870080c00093
 
   return 1;
 
