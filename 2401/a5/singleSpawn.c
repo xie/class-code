@@ -3,14 +3,22 @@
 #include "string.h"
 #include "unistd.h"
 
+#include "singlePrime.h"
+
 //PROTYPES
 void instructions();
 int morph(char *number);
 
 //main
 int main(int argc, char* argv[]) {
+  //process status int
+  int process_status;
+  //process output int
+  int process_output;
+  //store first int in bin file
+  char buffer[30];
 
-  //check if user input filename is not null
+  //check if file was given
   if (argv[1] != NULL) {
 
     FILE * file;
@@ -29,24 +37,54 @@ int main(int argc, char* argv[]) {
       } else {
         printf("%s\n", "read binary file success");
 
-        //char array to hold number as string
-        char buffer[30];
         //store value of num in buffer
         sprintf(buffer,"%d\n", num);
-
-
-        printf("%s\n", "sending to morph");
-        //send filename to moprh method
-        morph(buffer);
       }
     } else {
-      //error message
-      printf("%s, %s, %s \n", "Error: file ", argv[1], " does not exist.");
+    printf("%s\n", "file not readable");
     }
-    //if file is null show program usage
   } else {
-    instructions();
+    printf("%s\n", "no file");
   }
+
+
+    //define processId
+    pid_t process = fork();
+
+    //check if child process
+    if (0 == process) {
+      morph(buffer);
+
+      //error check
+    } else if (0 > process) {
+
+      printf("%s\n", "exit failure");
+      exit(EXIT_FAILURE);
+
+      //parent process
+    } else {
+
+      while (wait(&process_status) != process) {
+        //child process not complete
+      }
+
+      //give process_output var
+      process_output = WEXITSTATUS(process_status);
+      //evaluate process output
+      if (process_output == 1) {
+
+        //prime
+        // printf("The number %s is a prime number.\n",buffer);
+      } else if (process_output == 0) {
+        //not prime
+        // printf("The number %s is not a prime number.\n",buffer);
+      } else {
+        //error
+        // printf("There was an error");
+      }
+
+    }
+
   return 0;
 }
 
@@ -66,7 +104,6 @@ int morph(char *number) {
   //execute program within process id, pass program name and params
   int r = execvp(name, params);
 
-  //printf("%d\n",r);
 
   return 1;
 
