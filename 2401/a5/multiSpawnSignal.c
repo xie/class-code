@@ -2,13 +2,30 @@
 #include "stdlib.h"
 #include "string.h"
 #include "unistd.h"
+#include "signal.h"
 
-#include "multiSpawn.h"
+#include "multiSpawnSignal.h"
 
 #include <sys/stat.h>
+//global counter for number of responses
+int count_responses;
+int count_sent;
+
+
+void my_handler(int signum) {
+  int r = 0;
+  r = (count_sent - count_responses);
+  if (signum == SIGUSR1) {
+    printf("Total processes invoked:  %d Total processes working: %d\n", count_sent, r);
+  }
+}
+
 
 
 int main(int argc, char* argv[]) {
+
+
+  signal(SIGUSR1, my_handler);
 
   if (argv[1] != NULL) {
 
@@ -49,7 +66,6 @@ int fsize(FILE *fp){
     return sz / 4;
 }
 
-
 //return the number of lines in a file by dividing total size by size of elements
 int getFileSize(char *name) {
 
@@ -81,6 +97,10 @@ void printArr(int arr[], int len) {
 }
 
 void spawn(int arr[], int len) {
+  //initialize each time we try to multi spawn
+  count_responses = 0;
+  count_sent = 0;
+
 
   //array to store porcess ids
   pid_t process_ids[len];
@@ -107,6 +127,7 @@ void spawn(int arr[], int len) {
       sprintf(buffer, "%d \n", arr[i]);
       morph(buffer);
     }
+    count_sent++;
   }
 
 
@@ -134,7 +155,12 @@ void spawn(int arr[], int len) {
     if (process_output != 0) {
       perror("Error: ");
       return;
+    } else {
+      //verifies that response is not error and add to counter
+      count_responses++;
     }
+
+    kill(getpid(), SIGUSR1);
 
     //printf("status: %d\n", status);
 
