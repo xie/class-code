@@ -1,1 +1,9 @@
 ./DS_Store
+
+
+# exclude 2401/a5 executables
+/2401/a5/isPrime
+/2401/a5/createBinary
+/2401/a5/singleSpawn
+/2401/a5/multiSpawn
+/2401/a5/multiSpawnSignal
