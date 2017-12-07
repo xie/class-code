@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
     FILE * file = fopen(argv[1], "rb");
 
     //store number of lines in file
-    int numberOfLines = getFileSize(argv[1]);
+    int numberOfLines = fsize(file);
 
     printf("Number of lines on file: %d\n", numberOfLines);
 
@@ -37,6 +37,16 @@ int main(int argc, char* argv[]) {
   }
 
   return 0;
+}
+
+
+//bonus.. finds difference of pointer location from beginning and end of file
+int fsize(FILE *fp){
+    int p=ftell(fp);
+    fseek(fp, 0L, SEEK_END);
+    int sz=ftell(fp);
+    fseek(fp,p,SEEK_SET); //go back to where we were
+    return sz / 4;
 }
 
 
