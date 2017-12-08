@@ -42,9 +42,11 @@ int main(int argc, char* argv[]) {
       }
     } else {
     printf("%s\n", "file not readable");
+    return -1;
     }
   } else {
     printf("%s\n", "no file");
+    return -1;
   }
 
 
@@ -59,7 +61,7 @@ int main(int argc, char* argv[]) {
     } else if (0 > process) {
 
       printf("%s\n", "exit failure");
-      exit(EXIT_FAILURE);
+      return (-1);
 
       //parent process
     } else {
@@ -74,13 +76,13 @@ int main(int argc, char* argv[]) {
       if (process_output == 1) {
 
         //prime
-        // printf("The number %s is a prime number.\n",buffer);
+        printf("The number %s is a prime number. \n",buffer);
       } else if (process_output == 0) {
         //not prime
-        // printf("The number %s is not a prime number.\n",buffer);
+        printf("The number %s is not a prime number. \n",buffer);
       } else {
         //error
-        // printf("There was an error");
+        printf("There was an error");
       }
 
     }
